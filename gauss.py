@@ -7,14 +7,6 @@ def get_lcm(a, b):
     return abs((a * b) // gcd(a, b))
 
 
-def random_int_arr(shape, upto=20):
-    mat = np.random.rand(*shape)
-    for i in range(shape[0]):
-        for j in range(shape[1]):
-            mat[i, j] *= upto
-    return mat.astype("int64")
-
-
 def add(i, j, col, mat, file, log):
     lcm = get_lcm(mat[i, col], mat[j, col])
     coef_i = abs(lcm // mat[i, col])
